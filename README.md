@@ -4,8 +4,8 @@
 Allow to select month and year.
 
 ## tl;dr
-* Install by executing `npm install monthpic`.
-* Import by adding `import MonthPicker from 'monthpic'`.
+* Install by executing `npm install month-year-picker`.
+* Import by adding `import MonthPicker from 'month-year-picker'`.
 * Use by adding `<MonthPicker  name="..." />`.
 
 ### Usage
@@ -41,8 +41,8 @@ class MyApp extends Component {
 |hintStyle|hint text style for Month Picker.|n/a|<ul><li>Array:<br />`{color:"white"}`</li></ul>|
 |primaryColor|Primary Color for Month Picker.|"#27718c"|<ul><li>String:<br />`"#4776E6"`</li></ul>|
 |secondaryColor|secondary Color for Month Picker.|"#898989"|<ul><li>String:<br />`"#898989"`</li></ul>|
-|textFieldStyle|Text Field Style for Month Picker.|n/a|<ul><li>Array:<br />`{color:"black"}`</li></ul>|
-|disabled|For Disabling Month Picker.|false|<ul><li>Boolean<br />`true`</li></ul>|
+|textFieldStyle|Text field Style for Month Picker.|n/a|<ul><li>Array:<br />`{color:"black"}`</li></ul>|
+|disabled|For disabling Month Picker.|false|<ul><li>Boolean<br />`true`</li></ul>|
 
 
 
