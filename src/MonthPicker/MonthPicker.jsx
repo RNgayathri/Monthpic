@@ -295,10 +295,10 @@ class MonthPicker extends React.Component {
 
     render () {
         const { year, open } = this.state;
-        const { className, placeHolder, disabled, label } = this.props;
+        const { className, hintText, disabled, Id, primaryColor, secondaryColor, hintStyle, textFieldStyle } = this.props;
         const brand = {
-            "primaryColor":"#4776E6",
-            "secondaryColor":"#898989"
+            "primaryColor":primaryColor? primaryColor:"#4776E6",
+            "secondaryColor":secondaryColor? secondaryColor:"#898989"
         };
         return (
             <MuiThemeProvider>
@@ -307,6 +307,7 @@ class MonthPicker extends React.Component {
                     <TextField
                         underlineShow={false}
                         style={{
+                            ...textFieldStyle,
                             border: "1px solid rgba(0,0,0,0.1)",
                             padding: "11px 20px",
                             borderRadius: "10px",
@@ -321,12 +322,13 @@ class MonthPicker extends React.Component {
                             cursor:disabled?"not-allowed":"pointer"
                         }}
                         hintStyle={{
+                            ...hintStyle,
                             bottom: "10px"
                         }}
-                        id = { label }
+                        id = { Id }
                         className="textField"
                         autoComplete="off"
-                        hintText={placeHolder || "MM/YY"}
+                        hintText={hintText || "MM/YY"}
                         autoFocus = {false}
                         value={this.state.selectedDate && this.getValue(this.state.selectedDate)}
                         disabled={disabled}
