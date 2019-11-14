@@ -42,6 +42,8 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "keywords":[
+    "Month Picker", "Picker", "Year Picker", "Month Year Picker"],
   "browserslist": {
     "production": [
       ">0.2%",
