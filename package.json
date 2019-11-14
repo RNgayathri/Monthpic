@@ -29,6 +29,10 @@
   "scripts": {
     "build": "webpack"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RNgayathri/Monthpic.git"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
