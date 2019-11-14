@@ -31,10 +31,6 @@ class MyApp extends Component {
 ```
 ## User guide
 
-### Document
-
-Loads a document passed using `file` prop.
-
 #### Props
 
 |Prop name|Description|Default value|Example values|
