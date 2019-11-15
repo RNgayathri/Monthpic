@@ -12,8 +12,8 @@ Allow to select month and year.
 
 ## Demo
 <video width="320" height="240" autoplay>
-  <source src="./src/images/MPDemo.mov" type="video/mov">
-Your browser does not support the video tag.
+  <source src="./src/images/MPDemo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
 </video>
 
 ### Usage
