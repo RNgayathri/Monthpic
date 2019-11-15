@@ -1,11 +1,11 @@
 {
   "name": "month-year-picker",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "./lib/MonthPicker.js",
   "license": "MIT",
   "dependencies": {
+    "@material-ui/core": "^4.6.1",
     "date-fns": "2.0.0-alpha.10",
-    "material-ui": "^0.20.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
@@ -42,8 +42,12 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "keywords":[
-    "Month Picker", "Picker", "Year Picker", "Month Year Picker"],
+  "keywords": [
+    "Month Picker",
+    "Picker",
+    "Year Picker",
+    "Month Year Picker"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
