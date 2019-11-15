@@ -10,6 +10,12 @@ Allow to select month and year.
 ## Example
 <img src="./src/images/example-1.png" alt="Example-1" />
 
+## Demo
+<video width="320" height="240" autoplay>
+  <source src="./src/images/MPDemo.mov" type="video/mov">
+Your browser does not support the video tag.
+</video>
+
 ### Usage
 
 Here's an example of basic usage:
