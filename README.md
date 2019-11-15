@@ -11,10 +11,7 @@ Allow to select month and year.
 <img src="./src/images/example-1.png" alt="Example-1" />
 
 ## Demo
-<video width="320" height="240" autoplay>
-  <source src="./src/images/MPDemo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<img src="./src/images/MPDemo.gif" alt="Example-1" />
 
 ### Usage
 
