@@ -3,7 +3,6 @@
 
 Allow to select month and year.
 
-## tl;dr
 * Install by executing `npm install month-year-picker`.
 * Import by adding `import MonthPicker from 'month-year-picker'`.
 * Use by adding `<MonthPicker  name="..." />`.

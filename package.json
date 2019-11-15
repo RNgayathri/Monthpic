@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@material-ui/core": "^4.6.1",
-    "date-fns": "2.0.0-alpha.10",
+    "date-fns": "^2.7.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
@@ -41,6 +41,10 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "author": {
+    "name": "Gayathri R N",
+    "email": "gayathri.9mar94@gmail.com"
   },
   "keywords": [
     "Month Picker",
