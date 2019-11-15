@@ -11,7 +11,7 @@ Allow to select month and year.
 <img src="./src/images/example-1.png" alt="Example-1" />
 
 ## Demo
-<img src="./src/images/MPDemo.gif" alt="Example-1" />
+<img src="./src/images/MPDemo2.gif" alt="Example-1" />
 
 ### Usage
 
