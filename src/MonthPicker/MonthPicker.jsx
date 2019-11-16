@@ -296,7 +296,7 @@ class MonthPicker extends React.Component {
 
     render () {
         const { year, open } = this.state;
-        const { className, hintText, disabled, Id, primaryColor, secondaryColor, hintStyle, textFieldStyle } = this.props;
+        const { className, hintText, disabled, Id, primaryColor, secondaryColor, hintStyle, textFieldStyle, name } = this.props;
         const brand = {
             "primaryColor":primaryColor? primaryColor:"#4776E6",
             "secondaryColor":secondaryColor? secondaryColor:"#898989"
@@ -306,6 +306,7 @@ class MonthPicker extends React.Component {
             <Container className={className} tabIndex={-1} innerRef={this.setWrapperRef} onKeyDown={this.handleKeyDown}>
                 <div style={{position: 'relative'}}  onClick={this.handleTriggerClick}>
                     <TextField
+                        name={name}
                         underlineShow={false}
                         style={{
                             ...textFieldStyle,
