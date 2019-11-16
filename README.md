@@ -7,7 +7,6 @@ Allow to select month and year.
 * Import by adding `import MonthPicker from 'month-year-picker'`.
 * Use by adding `<MonthPicker  name="..." />`.
 
-## Example
 <img src="./src/images/example-1.png" alt="Example-1" />
 
 ## Demo
