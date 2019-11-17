@@ -1,6 +1,6 @@
 {
   "name": "month-year-picker",
-  "version": "0.1.5",
+  "version": "0.2.5",
   "main": "./lib/MonthPicker.js",
   "license": "MIT",
   "dependencies": {
@@ -38,6 +38,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/RNgayathri/Monthpic.git"
+  },
+  "author": {
+    "name": "Gayathri R N",
+    "email": "gayathri.9mar94@gmail.com"
   },
   "eslintConfig": {
     "extends": "react-app"
