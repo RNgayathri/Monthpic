@@ -1,11 +1,11 @@
 {
   "name": "month-year-picker",
-  "version": "0.1.6",
+  "version": "0.2.4",
   "main": "./lib/MonthPicker.js",
   "license": "MIT",
   "dependencies": {
-    "@material-ui/core": "^4.6.1",
-    "date-fns": "^2.7.0",
+    "date-fns": "2.0.0-alpha.10",
+    "material-ui": "^0.20.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
@@ -21,8 +21,8 @@
     "@babel/preset-react": "^7.0.0",
     "path": "^0.12.7",
     "prop-types": "^15.6.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "webpack": "^4.5.0",
     "webpack-cli": "^3.3.10"
   },
@@ -42,16 +42,16 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "author": {
-    "name": "Gayathri R N",
-    "email": "gayathri.9mar94@gmail.com"
-  },
   "keywords": [
     "Month Picker",
     "Picker",
     "Year Picker",
     "Month Year Picker"
   ],
+  "author": {
+    "name": "Gayathri R N",
+    "email": "gayathri.9mar94@gmail.com"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
