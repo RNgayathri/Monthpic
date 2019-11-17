@@ -39,6 +39,10 @@
     "type": "git",
     "url": "https://github.com/RNgayathri/Monthpic.git"
   },
+  "author": {
+    "name": "Gayathri R N",
+    "email": "gayathri.9mar94@gmail.com"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
