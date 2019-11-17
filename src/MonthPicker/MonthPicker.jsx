@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import TextField from "material-ui/TextField";
+import TextField from '@material-ui/core/TextField';
 import { getMonth, getYear, addMonths, subMonths} from 'date-fns';
 import { TooltipContainer, MonthContainer, Divider, Header, SVG } from "./MonthPickerStyles.jsx";
 import Month from "./Month.jsx";
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 
 export const Year = styled.span`
   user-select: none;
@@ -295,7 +296,7 @@ class MonthPicker extends React.Component {
 
     render () {
         const { year, open } = this.state;
-        const { className, hintText, disabled, Id, primaryColor, secondaryColor, hintStyle, textFieldStyle } = this.props;
+        const { className, hintText, disabled, Id, primaryColor, secondaryColor, hintStyle, textFieldStyle, name } = this.props;
         const brand = {
             "primaryColor":primaryColor? primaryColor:"#4776E6",
             "secondaryColor":secondaryColor? secondaryColor:"#898989"
@@ -305,6 +306,7 @@ class MonthPicker extends React.Component {
             <Container className={className} tabIndex={-1} innerRef={this.setWrapperRef} onKeyDown={this.handleKeyDown}>
                 <div style={{position: 'relative'}}  onClick={this.handleTriggerClick}>
                     <TextField
+                        name={name}
                         underlineShow={false}
                         style={{
                             ...textFieldStyle,
