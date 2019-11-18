@@ -1,10 +1,9 @@
 {
   "name": "month-year-picker",
-  "version": "0.2.5",
+  "version": "0.2.5-alpha",
   "main": "./lib/MonthPicker.js",
   "license": "MIT",
   "dependencies": {
-    "@material-ui/core": "^4.6.1",
     "date-fns": "^2.7.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -45,10 +44,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "author": {
-    "name": "Gayathri R N",
-    "email": "gayathri.9mar94@gmail.com"
   },
   "keywords": [
     "Month Picker",

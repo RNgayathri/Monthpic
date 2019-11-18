@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import TextField from '@material-ui/core/TextField';
-import { getMonth, getYear, addMonths, subMonths} from 'date-fns';
+import { getMonth, getYear, addMonths, subMonths } from 'date-fns';
 import { TooltipContainer, MonthContainer, Divider, Header, SVG } from "./MonthPickerStyles.jsx";
 import Month from "./Month.jsx";
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 
 export const Year = styled.span`
   user-select: none;
@@ -28,16 +26,16 @@ class MonthPicker extends React.Component {
     // Lifecycle methods
     constructor(props) {
         super(props);
-        const { initialYear} = props;
-            this.state = {
-                year: initialYear,
-                open: false,
-            };
+        const { initialYear } = props;
+        this.state = {
+            year: initialYear,
+            open: false,
+        };
     }
 
-    componentDidMount () {
+    componentDidMount() {
         let selectedDate;
-        if(this.props.initialValue && this.props.initialValue !== null) {
+        if (this.props.initialValue && this.props.initialValue !== null) {
             let values = this.props.initialValue !== null && this.props.initialValue.split('/');
             let year = this.props.initialValue !== null && `20${values[1]}`;
             let month = this.props.initialValue !== null && values[0];
@@ -50,18 +48,17 @@ class MonthPicker extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if(this.props.initialValue !== nextProps.initialValue)
-        {
-            let values = nextProps.initialValue!== null && nextProps.initialValue.split('/');
-            let year = nextProps.initialValue!== null && `20${values[1]}`;
-            let month = nextProps.initialValue!== null && values[0];
+        if (this.props.initialValue !== nextProps.initialValue) {
+            let values = nextProps.initialValue !== null && nextProps.initialValue.split('/');
+            let year = nextProps.initialValue !== null && `20${values[1]}`;
+            let month = nextProps.initialValue !== null && values[0];
             this.setState({
                 selectedDate: new Date(year, month - 1),
             });
         }
     }
 
-    componentWillUnmount () {
+    componentWillUnmount() {
         document.removeEventListener('mousedown', this.handleClickOutside);
     }
 
@@ -159,7 +156,7 @@ class MonthPicker extends React.Component {
         const { allowedYears } = this.props;
 
         if (Array.isArray(allowedYears)) {
-            const sortedYears = allowedYears.sort((a,b) => a - b);
+            const sortedYears = allowedYears.sort((a, b) => a - b);
             const currentIndex = sortedYears.indexOf(year);
 
             if (currentIndex < sortedYears.length - 1) return { year: sortedYears[currentIndex + 1] };
@@ -178,7 +175,7 @@ class MonthPicker extends React.Component {
         const { allowedYears } = this.props;
 
         if (Array.isArray(allowedYears)) {
-            const sortedYears = allowedYears.sort((a,b) => a - b);
+            const sortedYears = allowedYears.sort((a, b) => a - b);
             const currentIndex = sortedYears.indexOf(year);
 
             if (currentIndex > 0) return { year: sortedYears[currentIndex - 1] };
@@ -286,77 +283,70 @@ class MonthPicker extends React.Component {
         return months;
     };
 
-    getValue(date){
+    getValue(date) {
         let d = new Date(date);
-        let month = d.getMonth()+1;
+        let month = d.getMonth() + 1;
         let year = d.getFullYear().toString().substr(-2);
-        return `${month < 10? `0${month}`: month }/${year}`;
+        return `${month < 10 ? `0${month}` : month}/${year}`;
     }
 
-    render () {
+    render() {
         const { year, open } = this.state;
-        const { className, hintText, disabled, Id, primaryColor, secondaryColor, hintStyle, textFieldStyle, name } = this.props;
+        const { className, hintText, disabled, Id, primaryColor, secondaryColor, textFieldStyle, name } = this.props;
         const brand = {
-            "primaryColor":primaryColor? primaryColor:"#4776E6",
-            "secondaryColor":secondaryColor? secondaryColor:"#898989"
+            "primaryColor": primaryColor ? primaryColor : "#4776E6",
+            "secondaryColor": secondaryColor ? secondaryColor : "#898989"
         };
         return (
-            <MuiThemeProvider>
-            <Container className={className} tabIndex={-1} innerRef={this.setWrapperRef} onKeyDown={this.handleKeyDown}>
-                <div style={{position: 'relative'}}  onClick={this.handleTriggerClick}>
-                    <TextField
-                        name={name}
-                        underlineShow={false}
-                        style={{
-                            ...textFieldStyle,
-                            border: "1px solid rgba(0,0,0,0.1)",
-                            padding: "11px 20px",
-                            borderRadius: "10px",
-                            width: "100%",
-                            maxWidth: "100px",
-                            outline: "none",
-                            color: "#39393A",
-                            fontSize: "15px",
-                            fontWeight: "500",
-                            lineHeight: "18px",
-                            height: "auto",
-                            cursor:disabled?"not-allowed":"pointer"
-                        }}
-                        hintStyle={{
-                            ...hintStyle,
-                            bottom: "10px"
-                        }}
-                        id = { Id }
-                        className="textField"
-                        autoComplete="off"
-                        hintText={hintText || "MM/YY"}
-                        autoFocus = {false}
-                        value={this.state.selectedDate && this.getValue(this.state.selectedDate)}
-                        disabled={disabled}
-
-                    />
-            </div>
-                {open && !disabled && (
-                    <TooltipContainer brand={brand}>
-                        <Header brand={brand}>
-                            <SVG height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' onClick={this.previousYear}>
-                                <path d='M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z' fill="#fff"/>
-                                <path d='M0-.5h24v24H0z' fill='none'/>
-                            </SVG>
-                            <Year>{year}</Year>
-                            <SVG height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' onClick={this.nextYear}>
-                                <path d='M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z' fill="#fff"/>
-                                <path d='M0-.25h24v24H0z' fill='none'/>
-                            </SVG>
-                        </Header>
-                        <Divider brand={brand}/>
-                        <MonthContainer brand={brand}>
-                            {this.renderMonths({brand})}
-                        </MonthContainer>
-                    </TooltipContainer>
-                )}
-            </Container>
-            </MuiThemeProvider>
+                <Container className={className} tabIndex={-1} innerRef={this.setWrapperRef} onKeyDown={this.handleKeyDown}>
+                    <div style={{ position: 'relative' }} onClick={this.handleTriggerClick}>
+                        <input
+                            name={name}
+                            underlineShow={false}
+                            style={{
+                                border: "1px solid rgba(0,0,0,0.1)",
+                                padding: "11px 20px",
+                                borderRadius: "10px",
+                                width: "100%",
+                                maxWidth: "100px",
+                                outline: "none",
+                                color: "#39393A",
+                                fontSize: "15px",
+                                fontWeight: "500",
+                                lineHeight: "18px",
+                                height: "auto",
+                                cursor: disabled ? "not-allowed" : "pointer",
+                                ...textFieldStyle
+                            }}
+                            id={Id}
+                            className="textField"
+                            autocomplete="off"
+                            placeholder={hintText || "MM/YY"}
+                            autoFocus={false}
+                            value={this.state.selectedDate && this.getValue(this.state.selectedDate)}
+                            disabled={disabled}
+                        />
+                    </div>
+                    {open && !disabled && (
+                        <TooltipContainer brand={brand}>
+                            <Header brand={brand}>
+                                <SVG height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' onClick={this.previousYear}>
+                                    <path d='M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z' fill="#fff" />
+                                    <path d='M0-.5h24v24H0z' fill='none' />
+                                </SVG>
+                                <Year>{year}</Year>
+                                <SVG height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' onClick={this.nextYear}>
+                                    <path d='M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z' fill="#fff" />
+                                    <path d='M0-.25h24v24H0z' fill='none' />
+                                </SVG>
+                            </Header>
+                            <Divider brand={brand} />
+                            <MonthContainer brand={brand}>
+                                {this.renderMonths({ brand })}
+                            </MonthContainer>
+                        </TooltipContainer>
+                    )}
+                </Container>
         );
     }
 }
