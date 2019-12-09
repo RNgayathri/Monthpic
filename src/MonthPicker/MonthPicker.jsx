@@ -286,13 +286,13 @@ class MonthPicker extends React.Component {
     getValue(date) {
         let d = new Date(date);
         let month = d.getMonth() + 1;
-        let year = d.getFullYear().toString().substr(-2);
+        let year =(this.props.ChangeYearFormat)? d.getFullYear().toString():d.getFullYear().toString().substr(-2);
         return `${month < 10 ? `0${month}` : month}/${year}`;
     }
 
     render() {
         const { year, open } = this.state;
-        const { className, hintText, disabled, Id, primaryColor, secondaryColor, textFieldStyle, name } = this.props;
+        const { className, hintText, disabled, Id, primaryColor, secondaryColor, textFieldStyle, name, ChangeYearFormat } = this.props;
         const brand = {
             "primaryColor": primaryColor ? primaryColor : "#4776E6",
             "secondaryColor": secondaryColor ? secondaryColor : "#898989"
@@ -321,7 +321,7 @@ class MonthPicker extends React.Component {
                             id={Id}
                             className="textField"
                             autocomplete="off"
-                            placeholder={hintText || "MM/YY"}
+                            placeholder={hintText ||ChangeYearFormat?"MM/YYYY" : "MM/YY"}
                             autoFocus={false}
                             value={this.state.selectedDate && this.getValue(this.state.selectedDate)}
                             disabled={disabled}

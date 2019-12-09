@@ -41,9 +41,11 @@ class MyApp extends Component {
 |----|----|----|----|
 |className|Class name that will be added to rendered element along with the default.|n/a|<ul><li>String:<br />`"custom-class-name-1"`</li></ul>|
 |Id|Id for Month Picker.|n/a|<ul><li>String:<br />`"MonthYear"`</li></ul>|
+|allowedYears|allowedYears for Month Picker.|n/a|<ul><li>object:<br />`{ "after": new Date().getFullYear() - 2,"before": new Date().getFullYear() + 4}`</li></ul>|
+|ChangeYearFormat|Change year format to YYYY.|false|<ul><li>Boolean:<br />`true`</li></ul>|
 |hintText|hint text shown in picker.|"MM/YY"|<ul><li>String:<br />`"MM/YY"`</li></ul>|
-|primaryColor|Primary Color for Month Picker.|"#27718c"|<ul><li>String:<br />`"#4776E6"`</li></ul>|
-|secondaryColor|secondary Color for Month Picker.|"#898989"|<ul><li>String:<br />`"#898989"`</li></ul>|
+|primaryColor|Background Color of Month Picker.|"#27718c"|<ul><li>String:<br />`"#4776E6"`</li></ul>|
+|secondaryColor|Text Color of Month Picker.|"#898989"|<ul><li>String:<br />`"#898989"`</li></ul>|
 |textFieldStyle|Text field Style for Month Picker.|n/a|<ul><li>Array:<br />`{color:"black"}`</li></ul>|
 |disabled|For disabling Month Picker.|false|<ul><li>Boolean:<br />`true`</li></ul>|
 
